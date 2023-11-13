@@ -1,0 +1,40 @@
+Q1 : Explain the usage of ternary operator with syntax and write a program to check whether the number is even
+or odd using the ternary operator.
+
+A1 : Ternary operator is also known as conditional operator. It is the only javascript operator that takes 3 operands.
+It's syntax includes a conditional followed by a (?), then an expression to be executed if the condition is truthy.
+It is followed by a (:) and then finally the expression to be executed id the condition is falsy.
+
+condition ? expression1 : expression2
+
+Program :
+
+const input = 53;
+
+const result = input % 2 == 0 ? "even" : "odd";
+
+console.log(result);
+
+Q2 : Describe the usage of the comma operator in JavaScript and provide an example.
+
+A2 : The comma operator evaluates each of it's operands from left to right and returns the result of the last operand.
+Syntax : (expression1, expression2, expression3, ...);
+
+example : 
+
+let x = 9;
+
+const ans = (x=x+1, x=x-1, x=x+5, x%2);
+console.log(ans); // Output is 0
+
+Q3 : Use a nested ternary operator to check that a number is positive, negative or zero. You have to print
+“positive” if the number is positive and similarly for negative and zero also.
+
+Ans : const input;
+      input == 0 ? "Zero" : input > 0 ? "Positive" : "Negative";
+
+Q4 : Use a ternary operator to check that a person is eligible to vote or not by checking his age. If the age of the person is less than 18 then “You cannot vote” should be logged else “You can vote” should be logged.
+
+Ans : const age;
+      int result = age < 18 ? "You cannot vote" : "You can vote";
+      console.log(result);
