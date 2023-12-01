@@ -1,0 +1,119 @@
+Q1. What are conditionals statements? Explain conditionals statements with syntax and examples.
+
+Ans : conditionals works on boolean values, true or false. it is true if it meets the requirement or false otherwise.
+
+Types : 
+
+1. If statement : the statement will only execute if the condition is evaluated to be true.
+    if(condition){
+        // statement
+    }
+
+2. If else statement : this contains an optional else statement to be evaluated in cause the statement is evaluated to be true.
+
+        if(condition){
+            //statement
+        }
+        else{
+            statement
+        }
+
+3. Nested if - we can nest if else statement inside another if else statement
+
+        if(condition){
+             if(condition){
+                // statement
+             }
+        }
+
+4. if else if ladder - you can use multiple if else statements which allows you to chain multiple conditions together also called if else if ladder
+ 
+        if(condition){
+            // statement4
+        }
+        else if(condition){
+            // statement3
+        }
+        else if(condition){
+            // statement2
+        }
+        else(condition){
+            // statement1
+        }
+
+Q2. Write a program that grades students based on their marks.
+- If greater than 90 then A grade
+- If between 70 and 90 then a B grade
+- If between 50 and 70 then a C grade
+- Below 50 then and F grade
+
+Ans. 
+
+const marks;
+if(marks > 90)
+console.log("A");
+
+else if(marks <= 90 && marks >= 70)
+console.log("B");
+
+else if(marks <= 70 && marks >= 50)
+console.log("C");
+
+else
+console.log("F");
+
+Q3. What are loops, and what do we need them? Explain different types of loops with their syntax and
+examples.
+
+Ans. Loops offer a quick and easy way to do something repeatedly. There are many differnt kinds of loops soome of them are listed below.
+
+1. For - Loop
+2. Do - While Loop
+3. While Loop
+
+For Loop : for loop runs until the specicfied condition evaluates to false
+Syntax : for (initialization; condition; afterthought){
+          statement;
+          }
+
+example : 
+let num = 1;
+for(let i =0; i< 10; i++){
+    console.log(num);
+    num++;
+}
+
+Do - while loop 
+Syntax : do
+        {
+         statement
+        }
+        while (condition);
+
+the statement always executes once before the statement is condition is evaluated and after that it runs until the specified condition is evaluated false.
+
+While Loop : this runs until the specified condition is evaluated false
+
+syntax : while (condition){
+            statement}
+
+
+Q4. Generate numbers between any 2 given numbers.
+
+Ans. 
+
+const num1;
+const num2;
+
+for(let i  = num1; i <= num2; i++){
+    console.log(i);
+}
+
+Q5. Use the while loop to print numbers from 1 to 25 in ascending and descending order.
+
+Ans. let num = 1;
+
+while(num <= 25){
+    console.log(num);
+    num++;
+}
