@@ -1,0 +1,177 @@
+1. In the following shopping cart add, re9ove, and edit ite9s
+=> const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+    a. add 'Meat' in the beginning of >our shopping cart if it has not been already added
+    b. add 'Sugar' at the end of your shopping cart if it has not been already added
+    c. remove 'Honey' if you are allergic to honey
+    d. modify 'Tea' to 'Green Tea'
+
+Ans:
+    const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+    function addMeat() {
+      if (!shoppingCart.includes('Meat')) {
+        shoppingCart.unshift('Meat');
+      }
+    }
+    function addSugar() {
+      if (!shoppingCart.includes('Sugar')) {
+        shoppingCart.push('Sugar');
+      }
+    }
+    function removeHoney(){
+      const condition=prompt("are you allergic to honey?","y/n")
+      if(condition=="y"){
+        const index=shoppingCart.indexOf("Honey")
+        shoppingCart.splice(index,index)
+      }
+    
+    }
+    function modifyTea(){
+      const index=shoppingCart.indexOf("Tea")
+      shoppingCart[index]="Green Tea"
+    
+    }
+    addMeat()
+    console.log(shoppingCart)
+    addSugar()
+    console.log(shoppingCart)
+    removeHoney()
+    console.log(shoppingCart)
+    modifyTea()
+    console.log(shoppingCart)
+
+2. The following is an array of 10 students ages:
+=> const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+- Sort the array and find the min and max age
+- Find the median age(one middle item or two middle items divided by two)
+- Find the average age(all items divided by number of items)
+- Find the range of the ages(max minus min)
+- Compare the value of (min - average) and (max - average), use abs() method
+
+Ans:
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+function a(){
+  ages.sort((a, b) => a - b); 
+  console.log("min:",ages[0]);
+  console.log("max:",ages[ages.length-1])
+}
+function b() {
+  ages.sort((a, b) => a - b); // Sort the array first
+  let median;
+  if (ages.length % 2 === 1) {
+    median = ages[Math.floor(ages.length / 2)];
+  } else {
+    let one = ages[ages.length / 2 - 1];
+    let two = ages[ages.length / 2];
+    median = (one + two) / 2;
+  }
+  console.log(median);
+}
+b()
+
+Q3. 3. Object Extensibility and Sealing
+a) Use the Object.preventExtensions method to prevent any further additions of properties to the student object.
+b) Use the Object.isExtensible method to check if the student object is extensible. Store the result in a variable
+called extensibleStatus.
+c) Create a new object called teacher with a 'subject' property set to 'Math'.
+d) Use the Object.seal method to seal the teacher object, preventing an> additions or deletions of properties.
+e) Use the Object.isSealed method to check if the teacher object is sealed. Store the result in a variable calle"
+sealedStatus.
+f) Print the extensibleStatus and sealedStatus to the console.
+
+Ans :
+
+// Create a student object
+const student = {
+    name: "John Doe",
+    age: 20
+};
+
+// a. Prevent extensions on the student object
+Object.preventExtensions(student);
+
+// b. Check if the student object is extensible
+const extensibleStatus = Object.isExtensible(student);
+
+// c. Create a teacher object
+const teacher = {
+    subject: 'Math'
+};
+
+// d. Seal the teacher object
+Object.seal(teacher);
+
+// e. Check if the teacher object is sealed
+const sealedStatus = Object.isSealed(teacher);
+
+// f. Print the extensibleStatus and sealedStatus
+console.log("Student object extensible status:", extensibleStatus);
+console.log("Teacher object sealed status:", sealedStatus);
+
+Q4. Building a Student Management System
+
+Ans : 
+const students = [{
+    id: 1, firstname: "john", lastName: "Doe", age: 20,
+}, {
+    id: 2, firstname: "john2", lastName: "Doe2", age: 40,
+}, {
+    id: 3, firstname: "john3", lastName: "Doe3", age: 30,
+}];
+
+// a. Add a new student
+function addStudent(student) {
+    students.push(student);
+}
+
+// b. Update student information
+function updateStudent(id, updatedInfo) {
+    const index = students.findIndex(student => student.id === id);
+    if (index !== -1) {
+        students[index] = { ...students[index], ...updatedInfo };
+    }
+}
+
+// c. Delete a student
+function deleteStudent(id) {
+    const index = students.findIndex(student => student.id === id);
+    if (index !== -1) {
+        students.splice(index, 1);
+    }
+}
+
+// d. List all students
+function listAllStudents() {
+    students.forEach(student => {
+        console.log(`ID: ${student.id}, Name: ${student.firstname} ${student.lastName}, Age: ${student.age}`);
+    });
+}
+
+// e. Find students by grade
+function findStudentsByGrade(grade) {
+    return students.filter(student => student.grade === grade);
+}
+
+// f. Calculate average age
+function calculateAverageAge() {
+    const totalAge = students.reduce((sum, student) => sum + student.age, 0);
+    return totalAge / students.length;
+}
+
+Q5. You are given a JavaScript object representing a student's information. Your task is to use the 'for...in' loop to iterate over the properties of the object and perform various operations. 
+
+Ans : function displayStudentInfo(student) {
+    for (let property in student) {
+        console.log(`${property}: ${student[property]}`);
+    }
+}
+
+// Example usage:
+const student = {
+    name: "doeser",
+    major: "computer science",
+    GPA: 3.5,
+    age: 20,
+    isEnrolled: true
+};
+
+displayStudentInfo(student);
